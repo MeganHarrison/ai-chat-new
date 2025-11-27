@@ -1,97 +1,307 @@
-# Task List
+# TASK_LIST.md  
+This document defines the complete system specification for the multi-agent workflow.  
+The Project Manager agent reads ONLY this file and converts it into:
 
-This document defines the complete project specification used by the multi-agent workflow. It must include the following sections:
+- REQUIREMENTS.md  
+- AGENT_TASKS.md  
+- TEST.md  
 
-- **Goal**
-- **High-Level Requirements**
-- **Roles**
-- **Constraints**
-- **Deliverables**
-
-The Project Manager agent reads ONLY this file and converts it into REQUIREMENTS.md, AGENT_TASKS.md, and TEST.md.
+This document provides the authoritative upstream specification for the Nutrition Solutions AI Sales Coach widget.
 
 ---
 
-## 🎯 Goal
-Describe the primary goal of the project in 2–4 sentences that frame the bot as a conversion-focused transformation coach with a natural, scripted conversation flow.
+# 🎯 GOAL  
+
+Build a **full-stack AI chat widget**, similar to Intercom, that can be embedded on any WordPress website via a single `<script src="...">` embed.
+
+The widget uses **ChatKit** for the chat interface and **OpenAI Agents SDK** for all reasoning, guided flow handling, RAG queries, plan recommendations, off-route logic, and Active Client Support routing.  
+The experience must feel like a **high-conversion transformation coach**, powered by a structured assessment + intelligent assistant capable of breaking from the script naturally.
+
+The full system includes:
+- Embeddable widget  
+- ChatKit UI  
+- Guided flow state machine  
+- Off-route intelligence  
+- Testimonials carousel widget  
+- Agents SDK backend  
+- Supabase RAG + memory  
+- Active Client Support path  
+- Recommendation engine  
+- Logging + analytics hooks  
+
+---
+
+# 📌 HIGH-LEVEL REQUIREMENTS  
+
+## Functional Requirements
+
+### 1. Intercom-Style Widget  
+- Must load via `<script src="https://yourdomain.com/widget.js" defer></script>`.  
+- Inject floating bubble into any site.  
+- Opens a ChatKit-powered chat window.  
+- Mobile-responsive.  
+- No frameworks (pure Vanilla JS).  
+
+### 2. Guided Transformation Script  
+Implement the complete guided assessment sequence from PLANNING.md:
+
+1. Attention Hook  
+2. Demographics  
+3. Primary Goal  
+4. Current Eating Habits  
+5. Emotional Root ("Why Now")  
+6. Role of Nutrition Solutions  
+7. Testimonials Carousel  
+8. Synthesis + Plan Recommendation  
+
+- Script is stored in static JSON (`/conversation/flow.json`).  
+- Flow must be implemented as a **deterministic state machine**.  
+
+### 3. Off-Route Intelligence  
+If the user:
+- asks unrelated questions  
+- expresses doubt  
+- jumps ahead  
+- becomes emotional  
+- asks price/ingredient/delivery questions  
+
+…the agent must:
+- pause flow  
+- answer naturally using Agents SDK  
+- optionally RAG (Supabase)  
+- gently return to the guided sequence without sounding forced  
+
+Off-route rules stored in `conversation/offroute.json`.
+
+### 4. Brand Voice Requirements  
+All responses must adhere to Nutrition Solutions brand voice:
+- bold  
+- direct  
+- identity-focused  
+- transformation-oriented  
+- empathetic yet challenging  
+- no robotic phrasing  
+
+### 5. RAG (Supabase Vector Search)  
+Backend must query Supabase for:
+- products  
+- pricing  
+- policies  
+- meal plans  
+- FAQ content  
+- testimonials  
+
+RAG responses must be wrapped in motivational copy (NEVER pure factual dump).
+
+### 6. Transformation Carousel Widget  
+- A ChatKit widget that displays 1–5 transformations.  
+- Supports horizontal scrolling.  
+- Data served by backend (`/api/carousel`).  
+- Must filter based on user inputs (age, goals, habits).  
+- Widget must match screenshots provided.  
+
+### 7. Recommendation Logic  
+Based on user responses:
+
+- **Shred Spartan**  
+- **Shred Gladiator**  
+- **Beast Spartan**  
+- **Beast Gladiator**
+
+Rules defined in `conversation/recommendation_rules.json`.
+
+### 8. Active Client Support Path  
+Trigger when user says:
+- “I’m a current client”  
+- “Question about my order”  
+- “Need help with my meals”  
+
+Support path rules:
+- acknowledge  
+- RAG for technical answers  
+- fallback to concierge handoff:  
+  - Call  
+  - Text  
+  - Submit short form  
+
+### 9. Memory  
+- Short-term memory: per-session  
+- Long-term memory: Supabase table (`memory_entries`)  
+- Recognize returning users  
+- Personalize messages  
+
+### 10. Backend APIs  
+Expose the following endpoints:
+
+GET /api/health
+POST /api/message → Agents SDK orchestration
+POST /api/rag → Supabase vector search
+POST /api/recommend → plan synthesis
+POST /api/memory/store → save memory entries
+POST /api/memory/fetch → load user profile
+GET /api/carousel → testimonials widget
+POST /api/support → client support routing
 
 
-## 📌 High-Level Requirements
-List the functional and non-functional requirements.  
-Keep them short, directive, and unambiguous.
+### 11. Logging & Analytics  
+Log:
+- state transitions  
+- message metadata  
+- RAG hits/misses  
+- recommendation path  
+- support path usage  
 
-Example requirements should cover:
-- Intercom-style chat surface that feels conversational, coach-like, and conversion-oriented with a scripted transformation assessment.
-- Guided question sequence (hook, demographics, goals, habits, emotional root, role of Nutrition Solutions, testimonials carousel, synthesis + recommendation) with conditional messaging (plan/path variations).
-- Seamless off-route capability: pause the script for unrelated questions, doubt, price queries, or emotional inputs, respond naturally (reasoning + RAG), and transition back to the flow or CTA without feeling forced.
-- RAG integration via Supabase vector search for product details, pricing, policies, testimonials, and meal-plan data; wrap retrieved facts in motivational, brand-aligned copy.
-- Support for Active Client users (support path trigger, RAG-backed technical answers, fallback to concierge handoff text/call/form) plus ability to flag and route to human support.
-- Short-term and long-term memory to recognize returning visitors and keep context across sessions.
-- Transformation Carousel widget filtered by user inputs and CTA options (plan recommendations, support contact, or form submission).
-- Backend APIs (recommendation synthesis, RAG query endpoints, memory capture, support routing) and frontend hooks for Chatkit interface + carousel.
-- Logging/analytics hooks to capture conversation state for PM gating (per multi-agent workflow requirements).
+Files written to `/backend/logs/`.
 
-## 🧩 Roles
-Define what each agent is responsible for.  
-This must stay aligned with your `multi_agent_workflow.py` setup.
+---
 
-### Designer
-- Translate the scripted flow into a multi-agent conversation design brief: the hook, question tiers, CTA logic, transformation carousel placement, and tone for both new visitors and current clients.
-- Document off-route handling, Active Client support triggers, and plan recommendation conditions (Shred/Beast plan matrix).
-- Supply a wireframe description or structure notes that a Frontend Developer can follow to build the Intercom-like Chatkit UI and carousel widget.
+## Non-Functional Requirements  
+- Must feel **human**, not scripted or robotic.  
+- Use **multi-bubble sequences** for long messages.  
+- Must load in under 200ms on modern devices.  
+- Widget must not conflict with website CSS (Shadow DOM or scoped CSS).  
+- Backend must run on Node 18+.  
+- Code must remain readable + small.  
+- No build systems unless strictly required.  
 
-### Frontend Developer
-- Implement the Chatkit-powered chat interface, prompt/CTA surfaces, and Transformation Carousel widget per the design brief while honoring brand voice and pacing.
-- Wire UI state transitions for guided questions vs. off-route conversations and surface Active Client support options (including RAG failure fallback prompts).
-- Hook into the backend APIs for plan recommendations, RAG responses, memory indicators, and support routing; minimize frameworks unless needed.
+---
 
-### Backend Developer
-- Build the API layer to power guided recommendations, RAG retrievals (via Supabase vectors), client support routing, and short/long-term memory capture/lookup.
-- Ensure reasoning wraps factual responses, supply support handoff message templates, and expose endpoints that the frontend can call for plan synthesis, carousel data, and support actions.
-- Keep storage in-memory or Supabase; keep code readable and self-contained.
+# 🧩 ROLES  
 
-### Tester
-- Verify each requirement: guided flow, off-route handling, RAG + reasoning responses, Active Client support path or handoff, transformation carousel filtering, and backend endpoints.
-- Provide a test plan and lightweight verification steps (script or checklist) that ensures conversational guards, recommendation logic, and support pathways work as described.
+## Project Manager  
+- Convert TASK_LIST.md → REQUIREMENTS.md, AGENT_TASKS.md, TEST.md  
+- Ensure deterministic file generation  
 
-## ⚙️ Constraints
-Include technical, operational, or architectural constraints.
+## Designer  
+Produce:
+- `/design/design_spec.md`  
+- `/design/wireframe.md`  
+Must include:
+- Chat window layout  
+- Bubble pacing rules  
+- Widget specs  
+- State machine diagrams  
+- Tone rules  
+- Message sequencing  
+- Active Client Support logic  
 
-Example:
-- Must run without external dependencies unless specified.
-- No frameworks unless explicitly allowed.
-- All files must be small, readable, and saved to the correct folders.
-- Follow all file names exactly as listed in AGENT_TASKS.md.
+## Frontend Developer  
+Implement:
 
-## 📦 Deliverables
-List everything that must be produced by the workflow.
+- `/widget/widget.js` → embed script  
+- `/widget/widget.css` → styling  
+- `/frontend/chatkit.js` → ChatKit integration  
+- `/frontend/ui-state-machine.js`  
+- `/frontend/carousel-widget.js`  
+- `/frontend/utils.js`
 
-Example:
+Frontend responsibilities:
+- inject bubble  
+- open/close animation  
+- chat window creation  
+- message rendering  
+- quick replies UI  
+- widgets UI  
+- error states  
+- mobile support  
 
-### Project-Root Deliverables
-- REQUIREMENTS.md
-- TEST.md
-- AGENT_TASKS.md
+## Backend Developer  
+Implement Node/Express backend:
 
-### Designer Deliverables
-- /design/design_spec.md (conversation flow, off-route breaks, carousel placement, CTA copy, Active Client support triggers)
-- /design/wireframe.md (Chatkit + carousel layout notes and flow diagram)
+- `/backend/server.js`  
+- `/backend/routes/*.js`  
+- Agents SDK integration  
+- RAG retrieval  
+- memory store/load  
+- recommendation synthesis  
+- support routing  
+- transformation carousel filtering  
 
-### Frontend Deliverables
-- /frontend/index.html (Intercom-style chat window with Chatkit, transformation carousel area, Active Client support prompt)
-- /frontend/styles.css (brand-compliant styling, responsive layout, carousel design)
-- /frontend/main.js (chat state machine covering guided flow, off-route handling, memory flags, RAG call integration, support CTA)
+## Tester  
+Produce:
 
-### Backend Deliverables
-- /backend/server.js (API routes for recommendations, RAG queries, memory capture, support routing, plan synthesis)
-- /backend/package.json (startup script, dependencies for Supabase/RAG/memory handling)
+- `/tests/TEST_PLAN.md`  
+- `/tests/test.sh`  
 
-### Tester Deliverables
-- /tests/TEST_PLAN.md (checklist covering conversation flow, RAG behavior, off-route logic, Active Client support path, and API contracts)
-- /tests/test.sh (optional script that pings backend endpoints and validates designed responses if feasible)
+Must test:
+- guided flow  
+- off-route handling  
+- RAG correctness  
+- widget rendering  
+- plan recommendation logic  
+- Active Client Support path  
+- API contract consistency  
 
-## 📝 Notes (Optional)
-- Guided script is critical (hook → demographics → goals → habits → emotional root → role of NS → testimonials → synthesis); ensure every agent references it for tone and sequencing.
-- Off-route logic must feel human: pause the flow, answer with reasoning + RAG, and nudge back to the CTA or next question without sounding rigid.
-- Active Client support prompts must surface a way to text/call concierge, offer a short form handoff, and rely on RAG answers before escalating.
-- Use the Intelligent Routing Matrix to decide when to call RAG: product/pricing/policy questions, comparisons, and technical explanations must be enhanced with motivational framing.
+---
+
+# ⚙️ CONSTRAINTS  
+
+- **Frontend:** Vanilla JS only.  
+- **Widget:** Single embed file (`widget.js`).  
+- **No frameworks** (React/Vue/Svelte prohibited).  
+- **Backend:** Node.js + Express only.  
+- **Agents SDK** required for all reasoning.  
+- **ChatKit** required for UI.  
+- **Static scripts** stored in `/conversation/`.  
+- **Supabase** required for RAG & memory.  
+- All deliverables must match paths exactly.  
+- No renaming files or folders.  
+
+---
+
+# 📦 DELIVERABLES  
+
+## Project Root
+- REQUIREMENTS.md  
+- AGENT_TASKS.md  
+- TEST.md  
+
+## /design
+- design_spec.md  
+- wireframe.md  
+
+## /conversation
+- flow.json  
+- offroute.json  
+- recommendation_rules.json  
+
+## /widget
+- widget.js  
+- widget.css  
+- chat-window.html (HTML template if needed)
+
+## /frontend
+- chatkit.js  
+- ui-state-machine.js  
+- carousel-widget.js  
+- utils.js  
+
+## /backend
+- server.js  
+- /routes/message.js  
+- /routes/rag.js  
+- /routes/recommend.js  
+- /routes/support.js  
+- /routes/memory.js  
+- /routes/carousel.js  
+- package.json  
+
+## /tests
+- TEST_PLAN.md  
+- test.sh  
+
+---
+
+# 📝 NOTES  
+
+- Agents SDK must orchestrate guided flow state machine + off-route logic.  
+- ChatKit messages must use multi-bubble pacing for readability.  
+- Carousel widget must visually match the screenshots provided.  
+- RAG factual content must be rewritten in brand voice before sending.  
+- Returning users must feel recognized and supported.  
+- Off-route logic must feel intelligent and human.  
+- Support path must allow instant escalation.  
+
+---
+
+**This TASK_LIST.md is the sole source of truth for the multi-agent workflow.**  
