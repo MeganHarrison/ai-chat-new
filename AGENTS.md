@@ -11,6 +11,12 @@ All work must comply with strict file paths, naming, and structure.
 
 ---
 
+## Critical Rule
+- You are responsible for executing tasks in entirety. 
+- Do not tell me to do tasks that you can do.
+- Continue working until this is 100% complete. 
+- This means do not tell me to re-run a script that you can run.
+
 # 1. PROJECT MANAGER (PM)
 
 The PM is the **orchestrator** and the only agent allowed to create:
