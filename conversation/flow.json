@@ -1,0 +1,13 @@
+{
+  "start": "S1",
+  "states": [
+    { "id": "S1", "say": ["You’re here to transform. I’m here to make it simple.", "60 seconds → custom plan. Ready?"], "quickReplies": ["Let’s go", "Not now"], "next": "S2" },
+    { "id": "S2", "say": ["Let’s lock in a few basics. What’s your age range?"], "quickReplies": ["18–24","25–34","35–44","45–54","55+"], "memoryWrite": ["profile"], "next": "S3" },
+    { "id": "S3", "say": ["What’s the primary goal?"], "quickReplies": ["Lose fat","Build muscle","Recomp","Not sure"], "memoryWrite": ["goal"], "next": "S4" },
+    { "id": "S4", "say": ["Talk to me about your current eating—meals/day and any constraints."], "collect": {"habits":"free"}, "memoryWrite": ["habits"], "next": "S5" },
+    { "id": "S5", "say": ["Why now? What lit the fire?"], "collect": {"whyNow":"free"}, "memoryWrite": ["whyNow"], "next": "S6" },
+    { "id": "S6", "say": ["Here’s where Nutrition Solutions makes this simple: ready-to-go meals, zero guesswork, consistent results."], "next": "S7" },
+    { "id": "S7", "say": ["Check these real transformations that match your path."], "next": "S8" },
+    { "id": "S8", "say": ["Based on everything you’ve shared, I’ll tailor your plan now."], "next": null }
+  ]
+}

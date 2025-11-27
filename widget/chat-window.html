@@ -1,0 +1,26 @@
+<!-- Template consumed by widget.js; rendered inside Shadow DOM. No external CSS class names leak. -->
+<div id="ns-root" part="root">
+  <button id="ns-bubble" part="bubble" aria-label="Open coach" title="Chat">
+    <span part="bubble-dot">●</span>
+  </button>
+
+  <section id="ns-window" part="window" role="dialog" aria-modal="false" aria-label="Nutrition Solutions Coach" hidden>
+    <header id="ns-header" part="header">
+      <div part="brand">
+        <span part="logo" aria-hidden="true">🍽️</span>
+        <strong part="title">Nutrition Solutions Coach</strong>
+      </div>
+      <div id="ns-typing" part="typing" aria-live="polite" aria-atomic="true" hidden>typing…</div>
+      <button id="ns-close" part="close" aria-label="Close">×</button>
+    </header>
+
+    <div id="ns-transcript" part="transcript" aria-live="polite"></div>
+
+    <div id="ns-quick" part="quick-rail" aria-live="polite" aria-label="Quick replies" hidden></div>
+
+    <footer id="ns-composer" part="composer">
+      <textarea id="ns-input" part="input" rows="1" placeholder="Type a message…" aria-label="Type a message"></textarea>
+      <button id="ns-send" part="send" aria-label="Send">➤</button>
+    </footer>
+  </section>
+</div>

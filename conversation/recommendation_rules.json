@@ -1,0 +1,9 @@
+{
+  "plans": ["Shred Spartan", "Shred Gladiator", "Beast Spartan", "Beast Gladiator"],
+  "rules": [
+    { "when": {"goal": "Lose fat"}, "then": "Shred Spartan" },
+    { "when": {"goal": "Build muscle"}, "then": "Beast Gladiator" },
+    { "when": {"goal": "Recomp"}, "then": "Shred Gladiator" },
+    { "when": {"goal": "Not sure"}, "then": "Shred Gladiator" }
+  ]
+}

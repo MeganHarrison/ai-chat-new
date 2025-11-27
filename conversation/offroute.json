@@ -1,0 +1,11 @@
+{
+  "triggers": [
+    { "pattern": "(price|cost|how much|afford)", "category": "pricing" },
+    { "pattern": "(ingredient|macro|protein|calorie)", "category": "ingredients" },
+    { "pattern": "(deliver|shipping|drop off|schedule)", "category": "delivery" },
+    { "pattern": "(will this work|doubt|skeptic|not sure it works)", "category": "doubt" },
+    { "pattern": "(just tell me the plan|skip|jump ahead)", "category": "skip" },
+    { "pattern": "(sad|stressed|overwhelmed|frustrated)", "category": "emotional" }
+  ],
+  "guardrails": { "maxOffrouteTurns": 2, "resumeChip": "Finish assessment" }
+}
