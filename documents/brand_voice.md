@@ -9,6 +9,7 @@
     - *“Eat Like a Warrior. Live Like a Legend.”*
     - *“We’re not in the business of selling food. We’re in the business of changing lives.”*
 
+---
 
 ## Tone & Voice
 
@@ -19,6 +20,7 @@
 - **Aspirational Yet Relatable**: Speak to both the high-performer who wants optimization AND the person stuck in cycles of failure looking for redemption.
 - **Humor & Edge**: Strategic doses of sharp, sarcastic, or savage humor to stop scrolls and make messaging memorable.
 
+---
 
 ## Core Emotional Triggers
 
@@ -27,6 +29,8 @@
 3. **Discipline & Redemption** – Turn weakness, bad habits, and excuses into strength, consistency, and results.
 4. **Urgency & Scarcity** – 75% of Americans are overweight, 95% of diets fail. Transformation starts NOW, not someday.
 5. **Freedom** – Freedom from mediocrity, poor health, fatigue, depression, and wasted time.
+
+---
 
 ## Copywriting Principles
 
@@ -43,6 +47,8 @@
     - Motivation, accountability, lifestyle tools
 - **Embody Standards** – Every message should reinforce: Discipline. Ownership. High standards. No excuses.
 
+---
+
 ## Language & Style
 
 - **Preferred Words:** Dominate. Transform. Discipline. Warrior. Peak Performance. Legendary. Redemption. Consistency. No Excuses.
@@ -53,6 +59,8 @@
     - **Contrast:** Show the difference between staying average vs choosing NS.
     - **Cultural References:** Warriors, Spartans, Kobe, The Matrix, Marines, etc.
     - **Punchline Close:** Always end with a motivational hammer or challenge.
+
+---
 
 ## Example Copy in Brand Voice
 
@@ -78,6 +86,8 @@ Are you ready to eat like a warrior…
 
 and live like a legend?
 
+---
+
 ## Key Differentiators to Emphasize
 
 - Premium ingredients: grass-fed beef, elk, bison, venison, antibiotic-free poultry, organic produce.
@@ -86,11 +96,15 @@ and live like a legend?
 - Community & Culture: Clients join an ecosystem of discipline, ownership, and self-mastery.
 - Loyalty Value: Free protein donuts for life, no sales tax, overnight shipping.
 
+---
+
 This brief ensures **any copywriter, marketer, or content creator** knows exactly how to **write in the Nutrition Solutions voice, trigger transformation, and convert at a high level.**
 
 # Nutrition Solutions Swipe File
 
 *(Power Phrases, One-Liners & Headline Starters)*
+
+---
 
 ## Identity & Transformation
 
@@ -103,6 +117,8 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
 - *Transformation doesn’t take years. It takes a decision.*
 - *This is the end of mediocrity — and the start of domination.*
 
+---
+
 ## Pain + Truth (Call-Outs)
 
 - *75% of Americans are overweight. Don’t be another statistic.*
@@ -113,6 +129,8 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
 - *Your body doesn’t lie — it reflects your standards.*
 - *If your meals don’t move you closer to your goals, they’re moving you further away.*
 
+---
+
 ## Convenience & System Messaging
 
 - *High-protein, premium meals — ready in 2 minutes.*
@@ -122,6 +140,8 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
 - *Every order comes with: Results, freedom, and protein donuts for life.*
 - *Transformation shouldn’t take more of your time. It should give it back.*
 
+---
+
 ## Savage / Satirical Punchlines
 
 - *Premium high-protein meals in BPA-free containers don’t tank your hormones. Being 30% body fat does.*
@@ -130,6 +150,7 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
 - *Nobody remembers who ate clean for 3 days. Everybody remembers who transformed in 6 weeks.*
 - *Meal prep isn’t noble if you quit by week 2.*
 
+---
 
 ## Headline Starters
 
@@ -141,6 +162,7 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
 - **Don’t:** *Don’t call it food. Call it transformation.*
 - **This Is:** *This is how warriors eat. This is how legends are made.*
 
+---
 
 ## Closing Challenge Lines
 
@@ -181,10 +203,11 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
     
     → *“Don’t wait for motivation. Order now and dominate.”*
     
+    ---
     
-- **2. Transformation Story (Client / Celebrity / Testimonial Angle)**
+- 2. Transformation Story (Client / Celebrity / Testimonial Angle)
     
-    ## **2. Transformation Story (Client / Celebrity / Testimonial Angle)**
+    ## 2. Transformation Story (Client / Celebrity / Testimonial Angle)
     
     **Subject / Hook:**
     
@@ -214,9 +237,9 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
     
     ---
     
-- **3. Savage Call-Out (Social / Short Ad)**
+- 3. Savage Call-Out (Social / Short Ad)
     
-    ## **3. Savage Call-Out (Social / Short Ad)**
+    ## 3. Savage Call-Out (Social / Short Ad)
     
     **Headline / Hook:**
     
@@ -238,7 +261,7 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
     
 - **4. Stat Shock + Solution**
     
-    ## **4. Stat Shock + Solution**
+    ## 4. Stat Shock + Solution
     
     **Headline:**
     
@@ -268,7 +291,7 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
     
 - **5. Future Pacing / Challenge Close**
     
-    ## **5. Future Pacing / Challenge Close**
+    ## 5. Future Pacing / Challenge Close
     
     **Subject / Hook:**
     
@@ -297,7 +320,7 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
     
 - **6. Satirical / Savage Humor (Social / Meme Caption)**
     
-    ## **6. Satirical / Savage Humor (Social / Meme Caption)**
+    ## 6. Satirical / Savage Humor (Social / Meme Caption)
     
     **Hook:**
     
@@ -313,10 +336,11 @@ This brief ensures **any copywriter, marketer, or content creator** knows exactl
     
     *“Premium high-protein meals. No excuses. All results.”*
     
+    ---
     
-- **7. Quick-Hit Headlines Bank (for any channel)**
+- 7. Quick-Hit Headlines Bank (for any channel)
     
-    ## **7. Quick-Hit Headlines Bank (for any channel)**
+    ## 7. Quick-Hit Headlines Bank (for any channel)
     
     - *“Don’t call it food. Call it transformation.”*
     - *“Excuses don’t burn fat. Our meals do.”*
